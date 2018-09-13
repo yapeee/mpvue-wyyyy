@@ -1,8 +1,7 @@
 {
   "pages": [
-    "pages/music-play/main",
     "pages/index/main",
-
+    "pages/music-play/main",
     "pages/logs/main",
     "pages/counter/main"
   ],

@@ -15,7 +15,4 @@ export default {
   page{
     font-size: 30rpx;
   }
-  .container{
-    text-align: center;
-  }
 </style>

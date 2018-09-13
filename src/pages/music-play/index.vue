@@ -174,6 +174,7 @@ export default {
     opacity: 0.4;
     font-size: 4vw;
     padding: 2vw;
+    text-align: center;
   }
   .change-content .words .active {
     opacity: 1;
