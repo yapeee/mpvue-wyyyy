@@ -20,7 +20,24 @@
 </script>
 
 <style scoped>
-  .card {
-    padding: 10px;
+  .music-image {
+    display: flex;
+    justify-content:center;
+  }
+  .music-image .icon {
+    margin: 20vw 10vw 10vw 10vw;
+    width: 50vw;
+    height: 50vw;
+    border-radius: 50vw;
+    border: 6vw #000 solid;
+  }
+  .music-image .icon .image {
+    border-radius: 50vw;
+  }
+
+  .music-relevant {
+    padding: 0 20vw;
+    display: flex;
+    justify-content: space-between;
   }
 </style>

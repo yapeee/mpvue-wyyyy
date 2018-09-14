@@ -152,17 +152,23 @@ export default {
   },
   mounted () {
     context = wx.createCanvasContext('canvasid')
+
+    context.setStrokeStyle('#383838')
+    context.setLineWidth(2)
+    context.arc(12, 12, 10, 0, 2 * Math.PI, false)
+    context.stroke()
+    context.draw()
   },
   methods: {
     canvas () {
       let that = this
       if (stratNum <= endNum) {
         console.log('strat_num:', stratNum)
-        eAngle = 2 * Math.PI / endNum + sAngle + eAngle
+        eAngle = 2 * Math.PI / endNum + eAngle
         t = setTimeout(function () {
           context.setStrokeStyle('#DD4339')
           context.setLineWidth(2)
-          context.arc(12, 12, 10, sAngle, eAngle, false)
+          context.arc(12, 12, 10, sAngle, sAngle + eAngle, false)
           context.stroke()
           context.draw()
           that.canvas()
@@ -178,27 +184,35 @@ export default {
         clearTimeout(t)
       } else { // 开始
         this.listenerButtonPlay()
-        this.canvas()
       }
       isPlay = !isPlay
     },
     // 播放
     listenerButtonPlay () {
+      let self = this
       wx.playBackgroundAudio({
         dataUrl: 'http://www.ytmp3.cn/down/51807.mp3',
         title: '雪落下的声音',
         success: function () {
-          wx.getBackgroundAudioPlayerState({
-            success: function (res) {
-              console.log(res)
-              endNum = res.duration // 选定音频的长度
-            //  let status = res.status // 播放状态
-            //  let dataUrl = res.dataUrl // 歌曲数据链接
-            //  let currentPosition = res.currentPosition // 选定音频的播放位置
-            //  let duration = res.duration // 选定音频的长度
-            //  let downloadPercent = res.downloadPercent // 音频的下载进度
-            }
-          })
+          console.log('chenggong')
+          setTimeout(() => {
+            wx.getBackgroundAudioPlayerState({
+              success: function (res) {
+                console.log(123456789)
+                console.log(res)
+                endNum = res.duration // 选定音频的长度
+                self.canvas()
+              //  let status = res.status // 播放状态
+              //  let dataUrl = res.dataUrl // 歌曲数据链接
+              //  let currentPosition = res.currentPosition // 选定音频的播放位置
+              //  let duration = res.duration // 选定音频的长度
+              //  let downloadPercent = res.downloadPercent // 音频的下载进度
+              },
+              fail: function (res) {
+                console.log(res)
+              }
+            })
+          }, 500)
         }
       })
     },

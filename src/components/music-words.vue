@@ -30,7 +30,14 @@
 </script>
 
 <style scoped>
-  .card {
-    padding: 10px;
+  .words p {
+    color: #fff;
+    opacity: 0.4;
+    font-size: 4vw;
+    padding: 2vw;
+    text-align: center;
+  }
+  .words .active {
+    opacity: 1;
   }
 </style>

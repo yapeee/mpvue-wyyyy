@@ -77,6 +77,7 @@
 </template>
 
 <script>
+import musicMsg from '../../components/music-msg'
 
 export default {
   data () {
@@ -87,6 +88,7 @@ export default {
   },
 
   components: {
+    musicMsg
   },
   created () {
   },
@@ -169,7 +171,7 @@ export default {
     height: 105vw;
     overflow: scroll;
   }
-  .change-content .words p{
+  .change-content .words p {
     color: #fff;
     opacity: 0.4;
     font-size: 4vw;
