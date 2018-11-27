@@ -1,16 +1,16 @@
 <template>
   <div class="container">
-    <!--<div class="content">-->
-      <!--&lt;!&ndash;title&ndash;&gt;-->
-      <!--<div class="title">-->
-        <!--<div class="icon"><img src="/static/images/menu_choice.svg"/></div>-->
-        <!--<div class="mid-title">-->
-          <!--<div class="icon"><img src="/static/images/music_choice.svg"/></div>-->
-          <!--<div class="icon active"><img src="/static/images/logo_choice.svg"/></div>-->
-          <!--<div class="icon"><img src="/static/images/video_choice.svg"/></div>-->
-        <!--</div>-->
-        <!--<div class="icon"><img src="/static/images/find_choice.svg"/></div>-->
-      <!--</div>-->
+    <div class="content">
+      <!--title-->
+      <div class="title">
+        <div class="icon"><img src="/static/images/menu_choice.svg"/></div>
+        <div class="mid-title">
+          <div class="icon"><img src="/static/images/music_choice.svg"/></div>
+          <div class="icon active"><img src="/static/images/logo_choice.svg"/></div>
+          <div class="icon"><img src="/static/images/video_choice.svg"/></div>
+        </div>
+        <div class="icon"><img src="/static/images/find_choice.svg"/></div>
+      </div>
       <!--&lt;!&ndash;sub title&ndash;&gt;-->
       <!--<div class="sub-title">-->
         <!--<div class="text-btn active">推荐</div>-->
@@ -104,7 +104,7 @@
           <!--</div>-->
         <!--</div>-->
       <!--</div>-->
-    <!--</div>-->
+    </div>
     <!--footer-->
     <div class="play-bar">
       <div class="music-msg" @click="goToContent()">
@@ -118,7 +118,7 @@
         <div @click="musicPlay()">
           <canvas style="width: 8vw; height: 8vw;" canvas-id="canvasid"></canvas>
         </div> <!-- 播放暂停 -->
-        <div class="icon"><img src="/static/images/player-menu.svg"/></div> <!-- menu -->
+        <div class="icon"><img src="/static/images/menu.svg"/></div> <!-- menu -->
       </div>
     </div>
   </div>
@@ -194,7 +194,7 @@ export default {
         dataUrl: 'http://www.ytmp3.cn/down/51807.mp3',
         title: '雪落下的声音',
         success: function () {
-          console.log('chenggong')
+          console.log('成功播放')
           setTimeout(() => {
             wx.getBackgroundAudioPlayerState({
               success: function (res) {
